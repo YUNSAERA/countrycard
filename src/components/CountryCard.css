@@ -1,0 +1,20 @@
+.country-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.country-card:hover {
+  transform: scale(1.05);
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.country-flag {
+  width: 40%;
+  height: auto;
+  margin-bottom: 8px;
+}
