@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+# Countrycard
+**이 프로젝트는 React와 TypeScript를 사용하여 나라 목록을 보여주는 웹 애플리케이션입니다. 사용자는 나라를 선택하고 선택된 나라를 별도로 확인할 수 있습니다. 프로젝트의 주요 목적은 React와 TypeScript를 활용한 상태 관리와 컴포넌트 기반 개발을 학습하는 것입니다.**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 제작 기간
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+24.06.24 ~ 24.06.28
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Trouble Shooting
 
-- Configure the top-level `parserOptions` property like this:
+**1. 컴포넌트 상태 관리**
+문제점: 컴포넌트 간 상태 공유가 어렵고, 선택된 나라를 관리하는 로직이 복잡해짐.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+해결 방법: useState와 useEffect 훅을 활용하여 상태 관리를 단순화하고, 선택된 나라를 관리하는 함수를 구현하여 컴포넌트 간 상태를 공유.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**2. 비동기 데이터 요청**
+문제점: API 요청 시 발생하는 오류를 처리하지 않아, 데이터 로드 실패 시 사용자에게 피드백을 제공하지 않음.
+
+해결 방법: try-catch 블록을 사용하여 비동기 데이터 요청 시 발생하는 오류를 처리하고, 사용자에게 오류 메시지를 표시.
