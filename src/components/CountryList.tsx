@@ -40,6 +40,14 @@ const CountryList: React.FC = () => {
     }
   };
 
+  // 선택된 나라를 제외한 나머지 나라 목록을 필터링
+  const unselectedCountries = countries.filter(
+    (country) =>
+      !selectedCountries.find(
+        (selectedCountry) => selectedCountry.name.common === country.name.common
+      )
+  );
+
   console.log("countries :", countries);
 
   return (
@@ -58,7 +66,7 @@ const CountryList: React.FC = () => {
       </div>
       <h1>나라 목록</h1>
       <div className="country-grid">
-        {countries.map((country: Country) => {
+        {unselectedCountries.map((country: Country) => {
           return (
             <CountryCard
               key={country.name.common}
